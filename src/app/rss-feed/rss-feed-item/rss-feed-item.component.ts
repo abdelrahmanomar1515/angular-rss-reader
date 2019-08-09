@@ -11,4 +11,5 @@ export class RssFeedItemComponent {
   @Input('itemImageSource') imageSource: string;
   @Input('itemTitle') title: string;
   @Input('itemDate') date: string;
+  @Input('itemLink') link: string;
 }

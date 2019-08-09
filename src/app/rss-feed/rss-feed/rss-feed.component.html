@@ -2,7 +2,7 @@
     <div class="grid">
         <app-rss-feed-item class="grid-item" [ngClass]="{'grid-big-item': i % 10 === 0 || i % 10 === 6}"
             *ngFor="let item of vm.items; let i = index" [itemTitle]="item.title" [itemDate]="item.pubDate"
-            [itemImageSource]="item.enclosure.link || fallbackImageSource"></app-rss-feed-item>
+            [itemLink]="item.link" [itemImageSource]="item.enclosure.link || fallbackImageSource"></app-rss-feed-item>
     </div>
     <div class="actions">
         <!-- Uncomment next line and add a custom loading animation or just a text -->

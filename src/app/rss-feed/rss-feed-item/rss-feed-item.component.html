@@ -1,7 +1,9 @@
 <div class="card">
     <img [src]="imageSource">
     <div class="card-info">
-        <h3 class="card-title">{{ title }}</h3>
+        <a [href]="link">
+            <h3 class="card-title">{{ title }}</h3>
+        </a>
         <small class="card-faint">{{ date | date:'dd/MM/yyyy' }}</small>
     </div>
 </div>
