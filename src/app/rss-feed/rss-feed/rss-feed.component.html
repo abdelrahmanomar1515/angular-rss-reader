@@ -3,3 +3,6 @@
         *ngFor="let item of feedItems$ | async; let i = index" [itemTitle]="item.title" [itemDate]="item.pubDate"
         [itemImageSource]="item.enclosure.link || fallbackImageSource"></app-rss-feed-item>
 </div>
+<div class="actions">
+    <button class="view-more-button">View More</button>
+</div>

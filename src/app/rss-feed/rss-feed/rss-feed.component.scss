@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 0.5rem;
-  max-width: 1000px;
+  max-width: 1160px;
   width: 100%;
   .grid-big-item {
     grid-column: span 2;
@@ -14,5 +14,30 @@
     .grid-big-item {
       grid-column: span 1;
     }
+  }
+}
+
+.actions {
+  $primary: #474747;
+  display: grid;
+  height: 180px;
+  place-content: center;
+  .view-more-button {
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: 3px solid $primary;
+    background-color: white;
+    color: lighten($color: $primary, $amount: 5);
+    padding: 0.5rem 2.5rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    outline: none;
+    &:hover {
+      background-color: darken($color: #ffffff, $amount: 20);
+      color: darken($color: $primary, $amount: 5);
+    }
+  }
+  @media (max-width: 700px) {
+    height: 100px;
   }
 }
