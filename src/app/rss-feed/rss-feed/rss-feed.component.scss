@@ -1,0 +1,13 @@
+.grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 0.5rem;
+  width: 1000px;
+  .grid-item {
+    grid-column: auto / span 1;
+    &.grid-big-item {
+      grid-column: auto / span 2;
+    }
+  }
+}

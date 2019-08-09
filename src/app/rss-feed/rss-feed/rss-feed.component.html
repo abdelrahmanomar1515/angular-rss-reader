@@ -1,1 +1,5 @@
-<app-rss-feed-item></app-rss-feed-item>
+<div class="grid">
+    <app-rss-feed-item class="grid-item" [ngClass]="{'grid-big-item': i % 10 === 0 || i % 10 === 6}"
+        *ngFor="let item of feedItems$ | async; let i = index" [itemTitle]="item.title" [itemDate]="item.pubDate"
+        [itemImageSource]="item.enclosure.link || fallbackImageSource"></app-rss-feed-item>
+</div>
