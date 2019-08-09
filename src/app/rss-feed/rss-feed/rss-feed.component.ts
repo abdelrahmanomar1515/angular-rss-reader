@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Item } from '../models/feed-api-response';
-import { RssFeedService } from '../rss-feed.service';
+import { ItemState, RssFeedService } from '../rss-feed.service';
 
 @Component({
   selector: 'app-rss-feed',
   templateUrl: './rss-feed.component.html',
-  styleUrls: ['./rss-feed.component.scss']
+  styleUrls: ['./rss-feed.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RssFeedComponent {
-  feedItems$: Observable<Item[]> = this.rssFeedService.getFeed().pipe(map(res => res.items));
+  vm$: Observable<ItemState> = this.rssFeedService.vm$;
   fallbackImageSource = "https://via.placeholder.com/300?text=placeholder+image";
 
   constructor(private rssFeedService: RssFeedService) { }
 
+  showMore() {
+    this.rssFeedService.showSevenMoreItems();
+  }
 }

@@ -1,8 +1,12 @@
-<div class="grid">
-    <app-rss-feed-item class="grid-item" [ngClass]="{'grid-big-item': i % 10 === 0 || i % 10 === 6}"
-        *ngFor="let item of feedItems$ | async; let i = index" [itemTitle]="item.title" [itemDate]="item.pubDate"
-        [itemImageSource]="item.enclosure.link || fallbackImageSource"></app-rss-feed-item>
-</div>
-<div class="actions">
-    <button class="view-more-button">View More</button>
+<div *ngIf="(vm$ | async) as vm">
+    <div class="grid">
+        <app-rss-feed-item class="grid-item" [ngClass]="{'grid-big-item': i % 10 === 0 || i % 10 === 6}"
+            *ngFor="let item of vm.items; let i = index" [itemTitle]="item.title" [itemDate]="item.pubDate"
+            [itemImageSource]="item.enclosure.link || fallbackImageSource"></app-rss-feed-item>
+    </div>
+    <div class="actions">
+        <!-- Uncomment next line and add a custom loading animation or just a text -->
+        <!-- <p *ngIf="vm.loading">Loading...</p> -->
+        <button class="view-more-button" (click)="showMore()">View More</button>
+    </div>
 </div>
