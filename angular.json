@@ -80,8 +80,13 @@
           "options": {
             "browserTarget": "angular-app:build"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-app"
 }
