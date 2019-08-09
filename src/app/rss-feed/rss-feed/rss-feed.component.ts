@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RssFeedService } from '../rss-feed.service';
 
 @Component({
   selector: 'app-rss-feed',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RssFeedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rssFeedService: RssFeedService) { }
 
   ngOnInit() {
+    this.rssFeedService.getFeed().subscribe(feed => console.log(feed));
   }
 
 }
